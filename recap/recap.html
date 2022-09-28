@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>recap</title>
+  </head>
+  <body>
+    <input id="textbox" type="text" />
+    <button onclick="convertToCm()">Convert to cm</button>
+    <button onclick="convertToInch()">Convert to inch</button>
+    <div id="result"></div>
+    <script>
+      const result = document.getElementById("result");
+      const textbox = document.getElementById("textbox");
+
+      function convertToCm() {
+        const text = textbox.value;
+        const conversion = +text * 2.54;
+
+        const newDiv = document.createElement("div");
+        newDiv.innerText = conversion;
+        result.appendChild(newDiv);
+      }
+
+      function convertToInch() {
+        const text = textbox.value;
+        const conversion = +text / 2.54;
+
+        const newDiv = document.createElement("div");
+        newDiv.innerText = conversion;
+        result.appendChild(newDiv);
+      }
+    </script>
+  </body>
+</html>

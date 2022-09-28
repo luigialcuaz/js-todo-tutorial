@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <script>
+      function aboveFreezing(temps) {
+        const tempsAboveFreezing = temps.filter((item) => {
+          return item > 0;
+        });
+
+        return tempsAboveFreezing;
+      }
+
+      aboveFreezing([0, 12, -23, -34, 15, 6, -88]);
+
+      function removeRed(foodArray) {
+        return foodArray.filter((item) => {
+          return item.color != "red";
+        });
+      }
+
+      removeRed([
+        {
+          name: "Apple",
+          color: "red",
+        },
+        {
+          name: "Egg",
+          color: "white",
+        },
+      ]);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <button id="todo-button" onclick="todo()">Text</button>
+    <div id="counter">0</div>
+    <button id="up-button" onclick="up()">Up</button>
+    <button id="down-button" onclick="down()">Down</button>
+    <input id="textbox" type="text" />
+    <button id="textbutton" onclick="newDiv()">Press me</button>
+    <script>
+      let count = 0;
+
+      function todo() {
+        let newText = document.getElementById("todo-button");
+        newText.innerText = "Done";
+      }
+
+      function up() {
+        count = count + 1;
+        updateCount();
+      }
+
+      function down() {
+        count = count - 1;
+        updateCount();
+      }
+
+      function updateCount() {
+        let buttonCounter = document.getElementById("counter");
+        buttonCounter.innerText = count;
+      }
+
+      function newDiv() {
+        let newText = document.getElementById("textbox");
+        let content = newText.value;
+
+        let newDiv = document.createElement("div");
+        newDiv.innerText = content;
+        document.body.appendChild(newDiv);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <script>
+      function max(numberArray) {
+        let current = -Infinity;
+        numberArray.forEach((element) => {
+          if (element > current) {
+            current = element;
+          }
+        });
+
+        return current;
+      }
+      max([1, 0, 15, 12, 17, 8, 9]);
+
+      function min(numberArray) {
+        let current = Infinity;
+
+        numberArray.forEach((element) => {
+          if (element < current) {
+            current = element;
+          }
+        });
+
+        return current;
+      }
+
+      console.log(min([1, 0, 15, 12, 17, 8, 9]));
+
+      function smallest(numArray) {
+        let current = Infinity;
+        numArray.forEach((num) => {
+          if (num >= 0 && num < current) {
+            current = num;
+          }
+        });
+
+        return current;
+      }
+
+      console.log(smallest([1, 5, -2, 4, 3, 5, 10]));
+
+      function pickApples(fruitArray) {
+        let maxOccurance = 2;
+
+        fruitArray = fruitArray.filter((fruit) => {
+          if (fruit === "apple" && maxOccurance !== 0) {
+            maxOccurance = maxOccurance - 1;
+            return false;
+          }
+
+          return true;
+        });
+
+        return fruitArray;
+      }
+
+      console.log(
+        pickApples(["cherry", "apple", "orange", "apple", "banana", "apple"])
+      );
+
+      function pickFruits(fruitArray) {
+        let maxApple = 2;
+        let maxOrange = 1;
+
+        fruitArray = fruitArray.filter((fruit) => {
+          if (fruit === "apple" && maxApple > 0) {
+            maxApple = maxApple - 1;
+            return false;
+          } else if (fruit === "orange" && maxOrange > 0) {
+            maxOrange = maxOrange - 1;
+            return false;
+          }
+
+          return true;
+        });
+
+        return fruitArray;
+      }
+
+      console.log(
+        pickFruits(["cherry", "apple", "orange", "apple", "banana", "apple"])
+      );
+
+      function pickLastApples(fruitArray) {
+        fruitArray = fruitArray.reverse();
+        let maxApple = 2;
+
+        fruitArray = fruitArray.filter((fruit) => {
+          if (fruit === "apple" && maxApple > 0) {
+            maxApple = maxApple - 1;
+            return false;
+          }
+
+          return true;
+        });
+
+        fruitArray = fruitArray.reverse();
+        return fruitArray;
+      }
+
+      console.log(
+        pickLastApples([
+          "cherry",
+          "apple",
+          "orange",
+          "apple",
+          "banana",
+          "apple",
+        ])
+      );
+    </script>
+  </body>
+</html>
